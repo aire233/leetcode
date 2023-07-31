@@ -23,10 +23,7 @@ public:
             if (nums[j] == 0)
                 i++;
             else if (i != 0)
-            {
-                nums[j - i] = nums[j];
-                nums[j] = 0;
-            }
+                swap(nums[j - i], nums[j]);
         }
     }
 };
