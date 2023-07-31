@@ -4,15 +4,21 @@ public:
     void rotate(vector<int> &nums, int k)
     {
         int n = nums.size(), i = 0, tmp;
-        int vis[n];
-        memset(vis, 0, sizeof(vis));
-        k = k % n;
-        while (1)
+        k %= n;
+        reverse(nums, 0, n - k - 1);
+        reverse(nums, n - k, n - 1);
+        reverse(nums, 0, n - 1);
+    }
+
+    void reverse(vector<int> &nums, int start, int end)
+    {
+        int tmp;
+        while (start < end)
         {
-            if (vis[i] == 1)
-                break;
-            tmp = nums[i + k], nums[i + k] = nums[i], vis[i] = 1;
-            i = (i + k) % n;
+            tmp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = tmp;
+            start++;end--;
         }
     }
 };
