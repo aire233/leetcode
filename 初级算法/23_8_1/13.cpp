@@ -3,15 +3,27 @@
  * struct ListNode {
  *     int val;
  *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    void deleteNode(ListNode* node) {
-        ListNode* p = node->next;
-        node->val = p->val;
-        node->next = p->next;
-        delete p;
+    ListNode *removeNthFromEnd(ListNode *head, int n)
+    {
+        ListNode *dummy = new ListNode(0);
+        dummy->next = head;
+        ListNode *fast = dummy, *slow = dummy;
+        while (n--)
+            fast = fast->next;
+        while(fast->next)
+        {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        slow->next = slow->next->next;
+        return dummy->next;
     }
 };
