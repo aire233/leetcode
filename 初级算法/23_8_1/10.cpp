@@ -1,3 +1,6 @@
+#include <vector>
+#include <string>
+using namespace std;
 class Solution { // KMP
 public:
     int strStr(string haystack, string needle) {
