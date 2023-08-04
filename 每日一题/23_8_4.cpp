@@ -14,7 +14,6 @@ public:
         }
         return dfs(grid, x, y, cnt);     
     }
-
     int dfs(vector<vector<int>>& grid, int x, int y, int cnt){
         if(x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] == -1) 
             return 0;
@@ -28,6 +27,5 @@ public:
         grid[x][y] = 0;
         return res;
     }
-
     int dir[4][2] = {{0,1},{0,-1},{1,0},{-1,0}};
 };
