@@ -52,3 +52,6 @@ class Solution:
 
 
 ## [6932. 子序列最大优雅度](https://leetcode.cn/problems/maximum-elegance-of-a-k-length-subsequence/)
+
+
+
