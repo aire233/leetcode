@@ -28,7 +28,7 @@ private:
         swap(nums[random], nums[right]);
         int pivot = nums[right];
         int i = left - 1;
-        for (int j = left; j < right; j++)
+        for (int j = left; j < right;j++)
         {
             if (nums[j] < pivot)
                 swap(nums[++i], nums[j]);
