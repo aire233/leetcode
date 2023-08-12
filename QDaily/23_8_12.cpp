@@ -1,13 +1,39 @@
-class Solution {
+#include <bits/stdc++.h>
+using namespace std;
+
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+class Solution
+{
 public:
-    int diagonalSum(vector<vector<int>>& mat) {
-        int ans = 0, n = mat.size();
-        for(int i = 0; i < n; i++)
+    ListNode *mergeKLists(vector<ListNode *> &lists)
+    {
+        auto cmp = [](ListNode *a, ListNode *b)
+        { return a->val > b->val; };
+        priority_queue<ListNode *, vector<ListNode *>, decltype(cmp)> pq;
+        for (auto list : lists)
         {
-            ans += mat[i][i];
-            if (n - i - 1 != i)
-                ans += mat[n-i- 1][i];
+            if (list)
+                pq.push(list);
         }
-        return ans;
+        ListNode *head = new ListNode(0);
+        ListNode *cur = head;
+        while (!pq.empty())
+        {
+            ListNode *node = pq.top();
+            pq.pop();
+            cur->next = node;
+            cur = cur->next;
+            if (node->next)
+                pq.push(node->next);
+        }
+        return head->next;
     }
 };
