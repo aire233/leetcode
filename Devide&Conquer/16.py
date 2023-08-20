@@ -16,4 +16,5 @@ class Solution:
         left = max(0, self.maxPath(root.left))
         right = max(0, self.maxPath(root.right))
         self.maxSum = max(self.maxSum, left + right + root.val)
+        # not return left + right + root.val, because it is not a path
         return max(left, right) + root.val
