@@ -35,7 +35,7 @@ public:
                 if (s > queries[i] && s - v <= queries[i]) 
                 {
                     ans[i]--;
-                    printf("%d %d %d %d\n", k >> 16, k & 0xffff, s, v);
+                    // printf("%d %d %d %d\n", k >> 16, k & 0xffff, s, v);
                 }
             }
         }
