@@ -1,6 +1,8 @@
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int>& prices) { 
+        // Scrolling arrays isn't necessarily bad than O(1) method below
+        // Continuous access to memory space makes time better
         int n = prices.size(), dp[3][2], ans = -1;
         memset(dp, 0, sizeof(dp));
         dp[0][1] = -prices[0];
