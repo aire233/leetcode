@@ -1,3 +1,4 @@
+# 357 weekly competition
 ## [6925. 故障键盘](https://leetcode.cn/problems/faulty-keyboard/)
 
 模拟即可，在出现 'i' 时翻转即可。也可以只使用队列，选择从前面或者后面进行加入新字符，最后确定是从前往后输出还是从后往前。
