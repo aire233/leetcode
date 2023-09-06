@@ -9,8 +9,8 @@
                                             |___/   
 
 ```             
-                    
-![LeetCode Logo](https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png)
+
+![LeetCode Logo]([https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png]#pic_center)
 
 这个仓库用于记录我在 LeetCode 上刷题的过程和解题思路。
 
