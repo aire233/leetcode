@@ -1,11 +1,14 @@
 # LeetCode 刷题记录
 
+```
  _                _    _          
 | |__  _   _     / \  (_)_ __ ___ 
 | '_ \| | | |   / _ \ | | '__/ _ \
 | |_) | |_| |  / ___ \| | | |  __/
 |_.__/ \__, | /_/   \_\_|_|  \___|
-       |___/                      
+       |___/   
+
+```             
                     
 ![LeetCode Logo](https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png)
 
