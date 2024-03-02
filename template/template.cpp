@@ -1,6 +1,6 @@
 #include "bits/stdc++.h"
-#define rep(i, a, n) for (auto i = a; i <= (n); ++i)
-#define revrep(i, a, n) for (auto i = n; i >= (a); --i)
+#define For(i, a, b) for (auto i = a; i < (b); ++i)
+#define Rof(i, a, b) for (auto i = a; i > (b); --i)
 #define all(a) a.begin(), a.end()
 #define sz(a) (int)(a).size()
 template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
