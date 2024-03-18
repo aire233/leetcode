@@ -47,3 +47,24 @@ template<class H, class... T> void debug_out(const H& h, const T&... t) {
 #else
 #define debug(...) if (0) puts("No effect.")
 #endif
+
+class Solution {
+public:
+    int sumOfEncryptedInt(vector<int>& nums) {
+        LL ans = 0LL;
+        for (auto x : nums) {
+            int res = 0, n = 0;
+            while (x) {
+                chmax(res, x % 10);
+                x /= 10;
+                n++;
+            }
+            int tmp = 0;
+            while (n--) {
+                tmp = tmp * 10 + res;
+            }
+            ans += tmp;
+        }
+        return ans;
+    }
+};

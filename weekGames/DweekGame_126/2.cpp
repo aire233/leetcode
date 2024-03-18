@@ -47,3 +47,51 @@ template<class H, class... T> void debug_out(const H& h, const T&... t) {
 #else
 #define debug(...) if (0) puts("No effect.")
 #endif
+
+class Solution {
+public:
+    vector<long long> unmarkedSumArray(vector<int>& nums, vector<vector<int>>& queries) {
+        int n = nums.size();
+        vector<bool> marked(n, false);  // 初始化标记数组
+        vector<long long> answer;       // 存储每次操作后未标记元素的总和
+        long long unmarkedSum = 0;      // 未标记元素的总和
+
+        // 创建一个元素值和索引的对的数组，并按元素值排序
+        vector<pair<int, int>> elements;
+        for (int i = 0; i < n; ++i) {
+            elements.emplace_back(nums[i], i);
+            unmarkedSum += nums[i];
+        }
+        sort(elements.begin(), elements.end());
+
+        // 处理每个查询
+        for (const auto& q : queries) {
+            int index = q[0], k = q[1];
+
+            // 标记 indexi 对应的元素
+            if (!marked[index]) {
+                marked[index] = true;
+                unmarkedSum -= nums[index];
+            }
+
+            // 标记 k 个未标记的最小元素
+            if (k) {
+                int i = 0;
+                while (i < n) if (marked[i]) i++;
+                for (int j = 0; j < k; ++j) {
+                    if (i == n) break;
+                    if (!marked[i]) {
+                        marked[i] = true;
+                        unmarkedSum -= nums[i];
+                    }
+                    do i++; while (i < n && marked[i]);
+                }
+            }
+
+            // 将当前未标记元素的总和加入答案数组
+            answer.push_back(unmarkedSum);
+        }
+
+        return answer;
+    }
+};

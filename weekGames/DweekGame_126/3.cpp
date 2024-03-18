@@ -47,3 +47,40 @@ template<class H, class... T> void debug_out(const H& h, const T&... t) {
 #else
 #define debug(...) if (0) puts("No effect.")
 #endif
+
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+#include <string>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+public:
+    string minimizeStringValue(string s) {
+        vector<int> freq(26, 0);  // 记录每个字母出现的频率
+        for (char& c : s) {
+            if (c != '?') {
+                // 更新非问号字符的频率
+                freq[c - 'a']++;
+            }
+            else {
+                // 对于问号，找到替换后分数增加最小的字符
+                for (int i = 0; i < 26; ++i) {
+                    if (freq[i] == 0) {
+                        // 如果当前字符i未出现过，替换它，并停止循环
+                        c = 'a' + i;
+                        freq[i]++;
+                        break;
+                    }
+                }
+            }
+        }
+        return s;
+    }
+};
+// "abcdefghijklmnopqrstuvwxy??"

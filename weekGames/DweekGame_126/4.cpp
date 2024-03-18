@@ -47,3 +47,36 @@ template<class H, class... T> void debug_out(const H& h, const T&... t) {
 #else
 #define debug(...) if (0) puts("No effect.")
 #endif
+
+class Solution {
+public:
+    int sumOfPower(vector<int>& nums, int k) {
+        int n = nums.size();
+        const int MOD = 1e9 + 7;
+        vector<vector<int>> dp(n + 1, vector<int>(k + 1, 0));
+        dp[0][0] = 1;
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j <= k; ++j) {
+                dp[i][j] = dp[i - 1][j];
+                if (j >= nums[i - 1]) {
+                    dp[i][j] = (dp[i - 1][j - nums[i - 1]] + dp[i][j]) % MOD;
+                }
+            }
+        }
+
+        int sum = 0;
+        for (int i = 1; i <= n; ++i) {
+            sum = (sum + dp[i][k]) % MOD;
+        }
+
+        return sum;
+    }
+};
+
+int main() {
+    vector<int> nums = {1, 2, 3};
+    int k = 3;
+    cout << Solution().sumOfPower(nums, k) << endl;
+    return 0;
+}
