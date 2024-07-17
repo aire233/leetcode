@@ -65,77 +65,55 @@ template <class H, class... T> void debug_out(const H& h, const T &...t) {
   std::puts("No effect.")
 #endif
 
-#define MAXN 105
-
-struct edge {
-    int v, w;
-};
-struct node {
-    int dis, u;
-    node(int dis, int u) : dis(dis), u(u) {}
-    bool operator>(const node& a) const { return dis > a.dis; }
-};
-class Solution {
-private:
-    vector<edge> e[MAXN];
-    int dis[MAXN], vis[MAXN];
-
-    void dijkstra(int from, int to) {
-        priority_queue<node, vector<node>, greater<node>> q;
-        memset(dis, 0x3f, sizeof(dis));
-        memset(vis, 0, sizeof(vis));
-        dis[from] = 0;
-        q.push(node(0, from));
-        while (!q.empty()) {
-            node cur = q.top();
-            q.pop();
-            int u = cur.u;
-            if (vis[u])
-                continue;
-            vis[u] = 1;
-            for (auto& i : e[u]) {
-                int v = i.v, w = i.w;
-                if (dis[v] > dis[u] + w) {
-                    dis[v] = dis[u] + w;
-                    q.push(node(dis[v], v));
-                }
-            }
-        }
-    }
-
-    int dfs(int u) {
-        vis[u] = 1;
-        int res = 1;
-        for (auto& i : e[u]) if (!vis[i.v]) res += dfs(i.v);
-        return res;
-    }
-
-    int solve(int mask, int n, int maxDistance, vector<vector<int>>& roads) {
-        For(i, 0, n) e[i].clear();
-        for (auto& road : roads) {
-            if (mask & (1 << road[0]) && mask & (1 << road[1])) {
-                e[road[0]].push_back({road[1], road[2]});
-                e[road[1]].push_back({road[0], road[2]});
-            }
-        }
-        For(i, 0, n) For (j, 0, n) if (mask & (1 << i) && mask & (1 << j) && i != j) {
-            dijkstra(i, j);
-            if (dis[j] > maxDistance) return 0;
-        }
-        memset(vis, 0, sizeof(vis));
-        return dfs(__builtin_ctz(mask)) == __builtin_popcount(mask);
-    }
-
+class Solution { // O(2^n * n^2 * nlog n)
 public:
     int numberOfSets(int n, int maxDistance, vector<vector<int>>& roads) {
-        int ans = 1;
-        For(mask, 1, 1 << n) {
-            if (__builtin_popcount(mask) == 1) {
-                ++ans;
-                continue;
-            }
-            ans += solve(mask, n, maxDistance, roads);
+        vector<vector<pair<int, int>>> g(n); // 邻接表表示图
+        for (auto& e : roads) {
+            int x = e[0], y = e[1], wt = e[2];
+            g[x].emplace_back(y, wt);
+            g[y].emplace_back(x, wt);
         }
+
+        auto dijkstra = [&](int src, vector<int>& dist, int mask) {
+            priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+            dist.assign(n, INT_MAX / 2);
+            dist[src] = 0;
+            pq.emplace(0, src);
+
+            while (!pq.empty()) {
+                auto [d, u] = pq.top(); pq.pop();
+                if (d > dist[u]) continue;
+                for (auto& [v, w] : g[u]) {
+                    if ((mask >> v) & 1 && dist[v] > dist[u] + w) {
+                        dist[v] = dist[u] + w;
+                        pq.emplace(dist[v], v);
+                    }
+                }
+            }
+        };
+
+        auto check = [&](int s) -> bool {
+            vector<vector<int>> f(n, vector<int>(n, INT_MAX / 2));
+            for (int i = 0; i < n; i++) {
+                if ((s >> i) & 1) {
+                    dijkstra(i, f[i], s);
+                }
+            }
+
+            for (int i = 0; i < n; i++) {
+                if (((s >> i) & 1) == 0) continue;
+                for (int j = 0; j < i; j++) {
+                    if ((s >> j) & 1 && f[i][j] > maxDistance) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        };
+
+        int ans = 1;
+        for (int s = 1; s < (1 << n); s++) ans += check(s);
         return ans;
     }
 };
