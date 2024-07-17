@@ -129,8 +129,8 @@ private:
 public:
     int numberOfSets(int n, int maxDistance, vector<vector<int>>& roads) {
         int ans = 1;
-        For(mask, 0, 1 << n) {
-            if (__builtin_popcount(mask) <= 1) {
+        For(mask, 1, 1 << n) {
+            if (__builtin_popcount(mask) == 1) {
                 ++ans;
                 continue;
             }
