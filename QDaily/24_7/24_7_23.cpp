@@ -65,47 +65,10 @@ static auto _ = []() {
 }();
 
 /*
-                                                            ,iLG8CCCCGti,                                                       
-                                                   iCCCC88L1;,..........,1LCCCCC8L,                                             
-                                            .fCC8f:.,,....       ..,...,.     ....:fCC8L..,,;:i:;:,.                            
-                          1CCCCGGGCCCG8LGCCGi.....,.,,....       ..,....,     ...,......tCGCt  .    .:ifLCCC81                  
-                     ,CG8i           LGC ..,,,   .,,....,         ...,..       ,,..,..     .iCGC .          CGCG                
-                   :LC            CGC.  .,.,,,    .......          ..,..       ......  .ift,  ..GG8:        CL,C,               
-                  :GGC        .CGL      ....,      .....                             ..G   i8C:   .fGC,     Gi,Cf               
-                  CCiC.     CGL   ..tCLCCGGC                                                 .  .   .,8Lf  ;C,,CG               
-                 tGC,C.  1CG        .                                                                  .LCLfC.,GG               
-                 CG;,G,fGL .                                                                             .LGC,:GC               
-                .GC,.8CL                                                                                   .CCfGC               
-                fGiGGC.                                                                                      .8C8               
-                CGCC.                                                                                          1Gt              
-                CGG                                                                                             ,CC             
-               iC1                                                                                                88            
-              ,C1...                                                                    .,,.                    .  LC           
-              C1                      .                                            iGCGGGCCGGCCG;                  .LG          
-             CC                  :fLGCCLGGGGCL;                                 ,GGCGGCC    tGGGGGG,                 GC.        
-            LC              . .tGGG:    8GGGGGGGG,                            .LGGGGGGGG    GGGGGGGCt                .CC        
-            Gi               iCGGGC8   1CGGCGGGGGCL                           LCGGGGCGGGGGCGGGGGGGGGGf                ,G;       
-           C8               1CGGGGGGGGGGGGGGGGGGGCGL                         ;GCGGGGGGGGGGGGGGGGGGGGGG:                88       
-           Ct              ,GGGGGGGGGGGGGGGGGGGGGGGGi                        1CGGGGGGGGGGGGGGGGGGGGGGCi                1C       
-          i8               ;CCGGGGGGGGGGGGGGGGGGGGGGt .            .         iGCGGGGGGGGGGGGGGGGGGGGGG:                .G:      
-          GC               :CGGGGGGGGGGGGGGGGGGGGGGG1       .  ,,             LGGGGGGGGGGGGGGGGGGGGGGf                  C1      
-          8L,..,.          .tCCGGGGGGGGGGGGGGGGGCGGG     .    ,GGC            .LGGGGGGGGGGGGGGGGGCGCf.             ,....Ct      
-          C1.....,,,,,,,..   fCGGGGGGGGGGGGGGGGGCGG,    .1L . tCfLG;  tt  .   . ;GGGGGGGGGGGGGGGCGG:   .,,,,,,,:,,,,,,,.C1      
-         .Ci .,,,,:,..:,:,,,  :GGGGGGGGGGGGGCGCGC1         Ct11;::;;iL            .1CGGGGGCGGGGGi.    ,,,:Ci:.C,,.Gt;;..C,.     
-    .,;1fCCGCGC.C..,8:,;C,,,,   .tGCGGGGGGGGGCL:           Gi::::::::1                 .,,:,          ,,,C;.,8,,,C.,,:;fG1LGC8CG
-.C11,     CC,..i::,t,,,t,,,,         ,;ii;:.               Gi::::::::;                                 .,:,,,,,,::,,...0G       
-          tG..,;i,,,,,,...                                 Gi:::::::::                                           .tGCGCLf:      
-     .:LCGGGGL1  ..                                        L;:::::::::,.                                       ti     CL .tCGC  
- :CCL;     iG. .;8 .                                       G;:::::::::                                          ,CCL;CG         
-            GCG8.                                          G;::::::::t                                         ...,.CCGG:       
-       .fGCG GC ,.,.                                       .1:::::::,1                                           .:CG   :8G8    
-    GGCL      1C1                                           1i:;,:;,t  .                                    .    CG,            
-                8C,.                                        . iLGLi.                                           GCt              
-                  GCL                                                                                       .88i                
-                    ,8CL                                                                                 :CCC                   
-                       .GCCCt.                                                                    . ,LCC8;                      
-                             ,fGCCCCCCC8CLt;:.                                          .  ,:LCC8CCL.                           
-                                            .:itCGGGGGGGGGGGCCGGCCCGCCCCCCCCCCCCCGGCGCCG8Gi,*/
+ /\_/\  
+( o.o ) 
+ > ^ <
+*/
 
 
 class Solution {
