@@ -1,6 +1,8 @@
 #include "bits/stdc++.h"
 #define For(i, a, b) for (auto i = a; i < (b); ++i)
 #define Rof(i, a, b) for (auto i = a; i > (b); --i)
+#define FOR(i, a, b) for (auto i = a; i <= (b); ++i)
+#define ROF(i, a, b) for (auto i = a; i >= (b); --i)
 #define all(a) a.begin(), a.end()
 #define sz(a) (int)(a).size()
 #define LL long long

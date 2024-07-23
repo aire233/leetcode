@@ -1,6 +1,8 @@
 #include "bits/stdc++.h"
 #define For(i, a, b) for (auto i = a; i < (b); ++i)
 #define Rof(i, a, b) for (auto i = a; i > (b); --i)
+#define FOR(i, a, b) for (auto i = a; i <= (b); ++i)
+#define ROF(i, a, b) for (auto i = a; i >= (b); --i)
 #define all(a) a.begin(), a.end()
 #define sz(a) (int)(a).size()
 #define LL long long
@@ -104,10 +106,10 @@ public:
             }
 
             dp[i][1][sz(vals) - 1] = 1;
-            For(p, 2, k + 1) For(v, 0, sz(vals)) {
+            FOR(p, 2, k) For(v, 0, sz(vals)) {
                 dp[i][p][v] = sum[p - 1][v];
             }
-            For(p, 1, k + 1) {
+            FOR(p, 1, k) {
                 For(v, 0, sz(vals)) {
                     suf[i][p] = (suf[i][p] + dp[i][p][v]) % mod;
                 }
