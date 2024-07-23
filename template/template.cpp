@@ -4,6 +4,8 @@
 #define all(a) a.begin(), a.end()
 #define sz(a) (int)(a).size()
 #define LL long long
+#define inf 0x3f3f3f3f
+#define mod 1000000007
 using namespace std;
 
 template <class A, class B> string to_string(const pair<A, B> &p);
@@ -61,3 +63,9 @@ static auto _ = []() {
     ios_base::sync_with_stdio(false);
     return 0;
 }();
+
+/*
+ /\_/\  
+( o.o ) 
+ > ^ <
+*/
