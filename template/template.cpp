@@ -50,7 +50,6 @@ string to_string(const tuple<A, B, C, D> &p) {
   return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " +
          to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
 }
-#include <iostream>
 void debug_out() { std::cerr << std::endl; }
 template <class H, class... T> void debug_out(const H &h, const T &...t) {
   std::cerr << " " << to_string(h);
